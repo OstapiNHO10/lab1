@@ -1,8 +1,13 @@
-def counter(nums, target): 
-    hashmap = {}    
-    for i, n in enumerate(nums): 
-        if n in hashmap:
-            return [hashmap[n], i]  
-        hashmap[target - n] = i    
-    return -1   
-print(counter(nums = [2,7,11,15], target = 9)) 
+nums = [2, 7, 11, 15]
+target = 9
+
+def two_sum(nums, target):
+    hashmap = {} 
+    for index, number in enumerate(nums):
+        complement = target - number
+        if complement in hashmap:
+            return [hashmap[complement], index]  
+        hashmap[number] = index
+    return "Not valid" 
+
+print(two_sum(nums, target))
